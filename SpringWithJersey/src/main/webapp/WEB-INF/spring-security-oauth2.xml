@@ -69,6 +69,8 @@
 		<sec:custom-filter ref="clientCredentialsTokenEndpointFilter"
 			before="BASIC_AUTH_FILTER" />
 	</sec:http>
+	
+	<sec:http pattern="/api/**" security="none" />
 
 	<sec:http pattern="/**" create-session="never"
 		entry-point-ref="oauthAuthenticationEntryPoint">

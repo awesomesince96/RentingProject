@@ -32,6 +32,9 @@ import com.springwithjersey.config.properties.MysqlProperties;
 public class MysqlClientConfiguration {
   private static final String PROPERTY_NAME_HIBERNATE_DIALECT = "hibernate.dialect";
   private static final String PROPERTY_NAME_HIBERNATE_SHOW_SQL = "hibernate.show_sql";
+
+  private static final String PROPERTY_NAME_HIBERNATE_HBM2LL = "hibernate.hbm2ddl.auto";
+
   private static final String PROPERTY_NAME_HIBERNATE_BATCH_SIZE = "hibernate.jdbc.batch_size";
   public static final String BASE_PACKAGE = "com.springwithjersey";
 
@@ -60,7 +63,7 @@ public class MysqlClientConfiguration {
     entityManagerFactoryBean.setDataSource(mySqlDataSource());
     entityManagerFactoryBean.setPersistenceProviderClass(HibernatePersistence.class);
     entityManagerFactoryBean.setPackagesToScan(BASE_PACKAGE);
-    entityManagerFactoryBean.setPersistenceUnitName(hibernateProperties.getPersistenceUnitName());
+    // entityManagerFactoryBean.setPersistenceUnitName(hibernateProperties.getPersistenceUnitName());
     entityManagerFactoryBean.setJpaProperties(jpaProperties());
 
     return entityManagerFactoryBean;
@@ -71,8 +74,13 @@ public class MysqlClientConfiguration {
     jpaProperties.put(PROPERTY_NAME_HIBERNATE_DIALECT, hibernateProperties.getDialect());
     jpaProperties.put(PROPERTY_NAME_HIBERNATE_SHOW_SQL, hibernateProperties.getShowSql());
     jpaProperties.put(PROPERTY_NAME_HIBERNATE_BATCH_SIZE, 80);
+
+    jpaProperties.put(PROPERTY_NAME_HIBERNATE_HBM2LL, hibernateProperties.getHbm2ddl());
+    System.out.println("oadnjlvsvsnvdlsnvsl-----" + hibernateProperties.getHbm2ddl());
+
     jpaProperties.put("hibernate.order_inserts", "true");
     jpaProperties.put("hibernate.order_updates", "true");
+    // jpaProperties.put("hbm2ddl.auto", "create");
     return jpaProperties;
   }
 

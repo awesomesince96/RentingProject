@@ -47,8 +47,13 @@ public class EnvironmentConfiguration implements InitializingBean {
   private String hibernateDialect;
   @Value("${hibernate.show_sql}")
   private Boolean hibernateShowSql;
-  @Value("${hibernate.persistenceUnitName}")
-  private String hibernatePersistenceUnitName;
+  // @Value("${hibernate.persistenceUnitName}")
+  // private String hibernatePersistenceUnitName;
+
+  @Value("${hibernate.hbm2ddl.auto}")
+  private String hibernateHbm2ddlAuto;
+
+
 
   @Value("${oAuthSecurity.supportRefreshToken}")
   private Boolean oAuthSecuritySupportRefreshToken;
@@ -73,7 +78,9 @@ public class EnvironmentConfiguration implements InitializingBean {
     HibernateProperties hibernateProperties = new HibernateProperties();
     hibernateProperties.setDialect(hibernateDialect);
     hibernateProperties.setShowSql(hibernateShowSql);
-    hibernateProperties.setPersistenceUnitName(hibernatePersistenceUnitName);
+    // hibernateProperties.setPersistenceUnitName(hibernatePersistenceUnitName);
+    // hibernateProperties.setHbm2ddl(hibernateHbm2ddlAuto);
+    hibernateProperties.setHbm2ddl(hibernateHbm2ddlAuto);
 
     return hibernateProperties;
   }

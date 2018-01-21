@@ -1,10 +1,9 @@
 package com.springwithjersey.rest.data;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Service;
 
-import com.springwithjersey.model.User;
+@Service
+public class UserRepository {
 
-public interface UserRepository extends JpaRepository<User, Long> {
 
-  User findByEmail(String email);
 }

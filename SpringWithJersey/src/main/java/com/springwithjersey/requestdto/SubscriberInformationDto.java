@@ -13,14 +13,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = false)
 @JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
 public class SubscriberInformationDto {
-  public static final String ID = "id";
-  public static final String COMPANY_ID = "companyId";
-  public static final String FIRST_NAME = "firstName";
-  public static final String LAST_NAME = "lastName";
-  public static final String EMAIL = "email";
-  public static final String CONTACT_NUMBER = "contactNumber";
-  public static final String ROLE_ID = "role_id";
-  public static final String PASSWORD = "password";
+
 
   private Long Id;
   @NotNull
@@ -41,4 +34,101 @@ public class SubscriberInformationDto {
   private String password;
   private String status;
   private Long roleId;
+
+  public Long getId() {
+    return Id;
+  }
+
+  public void setId(Long id) {
+    Id = id;
+  }
+
+  public String getCompanyName() {
+    return companyName;
+  }
+
+  public void setCompanyName(String companyName) {
+    this.companyName = companyName;
+  }
+
+  public Long getCompanyId() {
+    return companyId;
+  }
+
+  public void setCompanyId(Long companyId) {
+    this.companyId = companyId;
+  }
+
+  public String getFirstName() {
+    return firstName;
+  }
+
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
+
+  public String getLastName() {
+    return lastName;
+  }
+
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
+  }
+
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+  public String getContactNumber() {
+    return contactNumber;
+  }
+
+  public void setContactNumber(String contactNumber) {
+    this.contactNumber = contactNumber;
+  }
+
+  public Long getRole_id() {
+    return role_id;
+  }
+
+  public void setRole_id(Long role_id) {
+    this.role_id = role_id;
+  }
+
+  public String getAuthority() {
+    return authority;
+  }
+
+  public void setAuthority(String authority) {
+    this.authority = authority;
+  }
+
+  public String getPassword() {
+    return password;
+  }
+
+  public void setPassword(String password) {
+    this.password = password;
+  }
+
+  public String getStatus() {
+    return status;
+  }
+
+  public void setStatus(String status) {
+    this.status = status;
+  }
+
+  public Long getRoleId() {
+    return roleId;
+  }
+
+  public void setRoleId(Long roleId) {
+    this.roleId = roleId;
+  }
+
 }
