@@ -1,3 +1,44 @@
+package com.springwithjersey.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.springwithjersey.manager.UserManager;
+import com.springwithjersey.model.User;
+
+@Service
+@Transactional
+public class UserService {
+
+  private @Autowired UserManager Usermanager;
+
+  public void createUser(User User) {
+    Usermanager.createUser(User);
+  }
+
+  public User getUserById(long id) {
+    return Usermanager.getUserById(id);
+  }
+
+  public List<User> getUser() {
+    return Usermanager.getUser();
+  }
+
+  public void deleteUser(long id) {
+    Usermanager.deleteUser(id);
+  }
+
+  public void saveAllUser(List<User> countries) {
+    Usermanager.saveAllUser(countries);
+  }
+
+}
+
+
+
 // package com.springwithjersey.service;
 //
 // import org.springframework.beans.factory.annotation.Autowired;
